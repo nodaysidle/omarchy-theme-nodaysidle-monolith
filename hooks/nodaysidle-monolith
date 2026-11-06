@@ -5,5 +5,7 @@ set -euo pipefail
 THEME="${1:-}"
 
 if [[ "$THEME" == "nodaysidle-monolith" || "$THEME" == "Nodaysidle Monolith" ]]; then
-  echo "[nodaysidle-monolith] Applied theme hook"
+  # Reload Ghostty if running
+  killall -SIGUSR2 ghostty >/dev/null 2>&1 || true
+  echo "[nodaysidle-monolith] Applied theme hook and notified Ghostty"
 fi
