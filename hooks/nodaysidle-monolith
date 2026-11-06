@@ -5,7 +5,53 @@ set -euo pipefail
 THEME="${1:-}"
 
 if [[ "$THEME" == "nodaysidle-monolith" || "$THEME" == "Nodaysidle Monolith" ]]; then
-  # Reload Ghostty if running
+  # 1. Update Fish shell syntax highlighting for nodaysidle-monolith
+  mkdir -p "$HOME/.config/fish/conf.d"
+  cat <<'EOF' > "$HOME/.config/fish/conf.d/omarchy-theme.fish"
+# Generated for nodaysidle-monolith
+set -g fish_color_normal ededed
+set -g fish_color_command ffffff --bold
+set -g fish_color_keyword cccccc --bold
+set -g fish_color_quote b5b5b5
+set -g fish_color_redirection d8d8d8
+set -g fish_color_end 55555c
+set -g fish_color_error ff4b4b --bold
+set -g fish_color_param ededed
+set -g fish_color_comment 55555c
+set -g fish_color_selection --background=222226
+set -g fish_color_search_match --background=222226
+set -g fish_color_operator ffffff
+set -g fish_color_escape e0e0e0
+set -g fish_color_autosuggestion 444449
+EOF
+
+  # 2. Update universal fish variables for active sessions
+  if command -v fish >/dev/null 2>&1; then
+    fish -c "
+      set -U fish_color_normal ededed
+      set -U fish_color_command ffffff --bold
+      set -U fish_color_keyword cccccc --bold
+      set -U fish_color_quote b5b5b5
+      set -U fish_color_redirection d8d8d8
+      set -U fish_color_end 55555c
+      set -U fish_color_error ff4b4b --bold
+      set -U fish_color_param ededed
+      set -U fish_color_comment 55555c
+      set -U fish_color_selection --background=222226
+      set -U fish_color_search_match --background=222226
+      set -U fish_color_operator ffffff
+      set -U fish_color_escape e0e0e0
+      set -U fish_color_autosuggestion 444449
+    " >/dev/null 2>&1 || true
+  fi
+
+  # 3. Reload Ghostty terminal
   killall -SIGUSR2 ghostty >/dev/null 2>&1 || true
-  echo "[nodaysidle-monolith] Applied theme hook and notified Ghostty"
+
+  # 4. Reload Herdr multiplexer server
+  if command -v herdr >/dev/null 2>&1; then
+    herdr server reload-config >/dev/null 2>&1 || true
+  fi
+
+  echo "[nodaysidle-monolith] Applied theme hook (Ghostty, Fish, Herdr updated)"
 fi
