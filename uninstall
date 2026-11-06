@@ -1,0 +1,10 @@
+#!/bin/bash
+# Uninstaller for nodaysidle Monolith
+set -euo pipefail
+
+TARGET_DIR="$HOME/.config/omarchy/themes/nodaysidle-monolith"
+HOOK_FILE="$HOME/.config/omarchy/hooks/theme-set.d/nodaysidle-monolith"
+
+rm -rf "$TARGET_DIR"
+rm -f "$HOOK_FILE"
+echo "✔ Removed nodaysidle-monolith links"

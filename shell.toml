@@ -1,0 +1,78 @@
+# Omarchy Shell Surfaces for nodaysidle Monolith
+# Brutalist Stealth Monochrome & Bone Chalk White
+
+[bar]
+background       = "#050505"
+background-alpha = 0.98
+text             = "#EDEDED"
+active           = "#FFFFFF"
+scale-with-font  = true
+size-horizontal  = 26
+size-vertical    = 28
+
+[hyprland]
+active-border            = "#FFFFFF"
+active-border-foreground = "#FFFFFF"
+
+[controls]
+normal-color        = "#444449"
+normal-fill-alpha   = 0.06
+normal-border       = "#222226"
+normal-border-width = 1
+normal-border-alpha = 0.65
+
+hover-cursor-color        = "#FFFFFF"
+hover-cursor-fill-alpha   = 0.16
+hover-cursor-border       = "#EDEDED"
+hover-cursor-border-width = 1
+hover-cursor-border-alpha = 0.80
+
+focus-color        = "#FFFFFF"
+focus-fill-alpha   = 0.14
+focus-border       = "#FFFFFF"
+focus-border-width = 1
+focus-border-alpha = 0.90
+
+selected-color        = "#FFFFFF"
+selected-fill-alpha   = 0.22
+selected-border       = "#FFFFFF"
+selected-border-width = 1
+selected-border-alpha = 0.95
+
+pressed-fill-alpha   = 0.30
+selection-fill-alpha = 0.40
+
+[font]
+base-size = 11
+
+[popups]
+background       = "#050505"
+background-alpha = 0.98
+text             = "#EDEDED"
+border           = "#444449"
+border-alpha     = 0.75
+
+[tooltip]
+background       = "#000000"
+background-alpha = 1.00
+text             = "#FFFFFF"
+border           = "#222226"
+border-alpha     = 0.85
+
+[notifications]
+background       = "#050505"
+background-alpha = 0.98
+text             = "#EDEDED"
+border           = "#FFFFFF"
+border-alpha     = 0.90
+urgency-low      = "#444449"
+urgency-normal   = "#EDEDED"
+urgency-critical = "#FF4B4B"
+
+[osd]
+background       = "#050505"
+background-alpha = 0.96
+text             = "#EDEDED"
+border           = "#222226"
+border-alpha     = 0.75
+fill             = "#FFFFFF"

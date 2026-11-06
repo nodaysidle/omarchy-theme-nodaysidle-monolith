@@ -1,0 +1,9 @@
+#!/bin/bash
+# Omarchy Theme Hook for nodaysidle Monolith
+set -euo pipefail
+
+THEME="${1:-}"
+
+if [[ "$THEME" == "nodaysidle-monolith" || "$THEME" == "Nodaysidle Monolith" ]]; then
+  echo "[nodaysidle-monolith] Applied theme hook"
+fi

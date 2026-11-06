@@ -1,0 +1,56 @@
+# nodaysidle Monolith — Master Palette
+# Inspired by anonymous & brutalist minimalism.
+# Raw pitch onyx carbon ground, high-contrast bone chalk white, and pure typographic focus.
+
+mode = "dark"
+theme_type = "dark"
+
+accent = "#FFFFFF"
+selection = "#222226"
+selection_foreground = "#FFFFFF"
+muted = "#55555C"
+
+background = "#050505"
+dark_background = "#000000"
+darker_background = "#000000"
+lighter_background = "#111215"
+
+foreground = "#EDEDED"
+dark_foreground = "#444449"
+light_foreground = "#888890"
+bright_foreground = "#FFFFFF"
+
+# Monochrome-anchored syntax hierarchy with high legibility
+red = "#FF4B4B"
+yellow = "#E0E0E0"
+orange = "#C0C0C0"
+green = "#B5B5B5"
+cyan = "#D8D8D8"
+blue = "#CCCCCC"
+magenta = "#BEBEBE"
+brown = "#66666B"
+
+bright_red = "#FF6666"
+bright_yellow = "#F5F5F5"
+bright_green = "#D0D0D0"
+bright_cyan = "#EEEEEE"
+bright_blue = "#E5E5E5"
+bright_magenta = "#DDDDDD"
+
+# ANSI compatibility
+color0 = "#050505"
+color1 = "#FF4B4B"
+color2 = "#B5B5B5"
+color3 = "#E0E0E0"
+color4 = "#CCCCCC"
+color5 = "#BEBEBE"
+color6 = "#D8D8D8"
+color7 = "#EDEDED"
+color8 = "#55555C"
+color9 = "#FF6666"
+color10 = "#D0D0D0"
+color11 = "#F5F5F5"
+color12 = "#E5E5E5"
+color13 = "#DDDDDD"
+color14 = "#EEEEEE"
+color15 = "#FFFFFF"

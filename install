@@ -1,0 +1,26 @@
+#!/bin/bash
+# Theme Installer & Linker for nodaysidle Monolith
+set -euo pipefail
+
+THEME_SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TARGET_DIR="$HOME/.config/omarchy/themes/nodaysidle-monolith"
+HOOK_DIR="$HOME/.config/omarchy/hooks/theme-set.d"
+
+mkdir -p "$HOME/.config/omarchy/themes"
+if [[ "$THEME_SRC" != "$TARGET_DIR" ]]; then
+  rm -rf "$TARGET_DIR"
+  ln -sfn "$THEME_SRC" "$TARGET_DIR"
+  echo "✔ Linked theme: $THEME_SRC -> $TARGET_DIR"
+fi
+
+mkdir -p "$HOOK_DIR"
+if [[ -d "$THEME_SRC/hooks" ]]; then
+  for hook in "$THEME_SRC/hooks/"*; do
+    if [[ -f "$hook" ]]; then
+      install -m 755 "$hook" "$HOOK_DIR/$(basename "$hook")"
+      echo "✔ Hook installed: $HOOK_DIR/$(basename "$hook")"
+    fi
+  done
+fi
+
+echo "Ready! Apply anytime with: omarchy theme set nodaysidle-monolith"
